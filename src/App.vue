@@ -27,7 +27,7 @@ export default {
   methods: {
     getFilmFromSearchInApi(needle) {
       axios
-        .get(`"https://api.themoviedb.org/3/search/movie?api_key=b1f55a1442ac1c7de011ebad1af53cf3&query=${needle}"`
+        .get(`https://api.themoviedb.org/3/search/movie?api_key=b1f55a1442ac1c7de011ebad1af53cf3&query=${needle}`
         )
         .then((result) => {
           console.log(result);
@@ -36,13 +36,7 @@ export default {
           console.warn(error)
         })
     },
-
-    getSearchedWord(needle){
-      console.log(needle)
-      return needle;
-    }
   },
-
 };
 </script>
 
