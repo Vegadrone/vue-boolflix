@@ -9,7 +9,9 @@
               type="search"
               placeholder="Search"
               aria-label="Search"
+              v-model="searchedMovie"
             />
+            <h5>{{searchedMovie}}</h5>
             <button class="btn btn-outline-primary" type="submit">
               Search
             </button>
@@ -21,7 +23,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: function(){
+    return{
+      searchedMovie:'',
+    }
+  },
+
+  methods:{
+ 
+  }
+};
 </script>
 
 <style>
