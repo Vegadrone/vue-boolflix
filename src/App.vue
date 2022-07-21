@@ -17,10 +17,7 @@ export default {
   data: function(){
     return{
       filmListFromApi:[],
-      ogTitleList:[],
-      titleList:[],
-      filmLanguageList:[],
-      filmScoreList:[],
+    
     }
   },
 
@@ -36,18 +33,8 @@ export default {
         )
         .then((result) => {
           this.filmListFromApi = result.data.results;
-          this.filmListFromApi.forEach((element) => {
-            this.ogTitleList.push(element.original_title);
-            this.titleList.push(element.title);
-            this.filmScoreList.push(element.vote_average);
-            this.filmLanguageList.push(element.original_language);
-          });
-          console.log(this.filmListFromApi);
-          console.log(this.ogTitleList);
-          console.log(this.filmScoreList);
-          console.log(this.filmLanguageList);
-          console.log(this.titleList);
-        })
+          console.warn(this.filmListFromApi)
+          })
         .catch((error) => {
           console.warn(error)
         })

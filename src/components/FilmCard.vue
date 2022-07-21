@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row ">
         <div class="col-4">
             <ul>
                 <li>{{singleFilmFromApi.title}}</li>
