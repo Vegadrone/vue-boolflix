@@ -10,9 +10,9 @@
               placeholder="Search"
               aria-label="Search"
               v-model="searchedMovie"
+
             />
-            <h5>{{searchedMovie}}</h5>
-            <button class="btn btn-outline-primary" type="submit">
+            <button class="btn btn-outline-primary" type="submit" @click="$emit('search', searchedMovie)">
               Search
             </button>
           </form>

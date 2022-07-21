@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @click="getFilmFromSearch" />
     <Main />
   </div>
 </template>
@@ -40,7 +40,8 @@ export default {
   },
 
   created(){
-    this.getFilmFromSearch();
+    this.getFilmFromSearch(needle);
+    console.log(needle)
   }
   
 };
