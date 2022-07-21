@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <Header  @search="getFilmFromSearchInApi"/>
-    <Main />
+    <Main :filmListFromApi="filmListFromApi"
+          />
   </div>
 </template>
 
@@ -15,7 +16,11 @@ export default {
 
   data: function(){
     return{
-      films:[]
+      filmListFromApi:[],
+      ogTitleList:[],
+      titleList:[],
+      filmLanguageList:[],
+      filmScoreList:[],
     }
   },
 
@@ -30,7 +35,18 @@ export default {
         .get(`https://api.themoviedb.org/3/search/movie?api_key=b1f55a1442ac1c7de011ebad1af53cf3&query=${needle}`
         )
         .then((result) => {
-          console.log(result);
+          this.filmListFromApi = result.data.results;
+          this.filmListFromApi.forEach((element) => {
+            this.ogTitleList.push(element.original_title);
+            this.titleList.push(element.title);
+            this.filmScoreList.push(element.vote_average);
+            this.filmLanguageList.push(element.original_language);
+          });
+          console.log(this.filmListFromApi);
+          console.log(this.ogTitleList);
+          console.log(this.filmScoreList);
+          console.log(this.filmLanguageList);
+          console.log(this.titleList);
         })
         .catch((error) => {
           console.warn(error)
