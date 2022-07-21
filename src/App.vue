@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header  @search="getSearchedWord"/>
+    <Header  @search="getFilmFromSearchInApi"/>
     <Main />
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
 
   data: function(){
     return{
-      apiMovieUrl:"https://api.themoviedb.org/3/search/movie?api_key=b1f55a1442ac1c7de011ebad1af53cf3&query=fantozzi"
+      films:[]
     }
   },
 
@@ -25,10 +25,9 @@ export default {
   },
 
   methods: {
-    getFilmFromSearch() {
+    getFilmFromSearchInApi(needle) {
       axios
-        .get(
-          `this.apiMovieUrl${this.getSearchedWord}`
+        .get(`"https://api.themoviedb.org/3/search/movie?api_key=b1f55a1442ac1c7de011ebad1af53cf3&query=${needle}"`
         )
         .then((result) => {
           console.log(result);
@@ -43,10 +42,7 @@ export default {
       return needle;
     }
   },
-  mounted(){
-    this.getFilmFromSearch;
-    console.log(this.getFilmFromSearch)
-  }
+
 };
 </script>
 
