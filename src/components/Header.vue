@@ -6,14 +6,11 @@
           <form class="d-flex" role="search">
             <input
               class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
+              placeholder="Cerca Film o Serie TV"
               v-model="searchedMovie"
-
             />
-            <button class="btn btn-outline-primary" type="submit" @click="$emit('search', searchedMovie)">
-              Search
+            <button class="btn btn-outline-primary" type="submit" @click.prevent="$emit('search',searchedMovie)">
+              Cerca
             </button>
           </form>
         </div>
@@ -31,7 +28,7 @@ export default {
   },
 
   methods:{
- 
+    
   }
 };
 </script>

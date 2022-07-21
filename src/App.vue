@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @click="getFilmFromSearch" />
+    <Header  @search="getSearchedWord"/>
     <Main />
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
     getFilmFromSearch() {
       axios
         .get(
-          this.apiMovieUrl
+          `this.apiMovieUrl${this.getSearchedWord}`
         )
         .then((result) => {
           console.log(result);
@@ -37,13 +37,16 @@ export default {
           console.warn(error)
         })
     },
-  },
 
-  created(){
-    this.getFilmFromSearch(needle);
-    console.log(needle)
+    getSearchedWord(needle){
+      console.log(needle)
+      return needle;
+    }
+  },
+  mounted(){
+    this.getFilmFromSearch;
+    console.log(this.getFilmFromSearch)
   }
-  
 };
 </script>
 
