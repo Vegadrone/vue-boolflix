@@ -1,15 +1,28 @@
 <template>
   <header>
-    <h1>HEADER</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-4 mt-4">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-primary" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>
