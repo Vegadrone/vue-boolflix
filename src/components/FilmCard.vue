@@ -3,10 +3,7 @@
     <div class="row ">
         <div class="col-4">
             <ul>
-                <li>{{singleFilmFromApi.title}}</li>
-                <li>{{singleFilmFromApi.original_title}}</li>
-                <li>{{singleFilmFromApi.original_language}}</li>
-                <li>{{singleFilmFromApi.vote_average}}</li>
+                <li>{{singleFilmFromApi.title}} - {{singleFilmFromApi.original_title}} - {{singleFilmFromApi.original_language}} - {{singleFilmFromApi.vote_average}}</li>
             </ul>
         </div>
     </div>

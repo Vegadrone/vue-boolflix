@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header  @search="getFilmFromSearchInApi"/>
+    <Header  @search="getResultsFromSearchInApi"/>
     <Main :filmListFromApi="filmListFromApi"
           />
   </div>
@@ -16,7 +16,11 @@ export default {
 
   data: function(){
     return{
+      apiMovieUrl:'https://api.themoviedb.org/3/search/movie',
+      apiTvShowsUrl:'https://api.themoviedb.org/3/search/tv',
+      apiKey: 'b1f55a1442ac1c7de011ebad1af53cf3',
       filmListFromApi:[],
+      tvShowListFromApi:[],
     
     }
   },
@@ -27,18 +31,22 @@ export default {
   },
 
   methods: {
-    getFilmFromSearchInApi(needle) {
+    getResultsFromSearchInApi(needle) {
+      this.axiosCall()
+    },
+
+    axiosCall(url, array){
       axios
-        .get(`https://api.themoviedb.org/3/search/movie?api_key=b1f55a1442ac1c7de011ebad1af53cf3&query=${needle}`
-        )
+        .get(url)
         .then((result) => {
-          this.filmListFromApi = result.data.results;
-          console.warn(this.filmListFromApi)
+          array = result.data.results;
+          console.warn(this.array)
           })
         .catch((error) => {
           console.warn(error)
         })
-    },
+
+    }
   },
 };
 </script>
