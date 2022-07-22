@@ -3,20 +3,37 @@
     <div class="row">
       <div class="col-4">
         <ul>
-          <li><img :src="`${imgBaseUrl}w342${singleFilm.poster_path}`" alt="poster"></li>
-          <li>{{ singleFilm.title }}</li>
-          <li>{{ singleFilm.original_title }}</li>
           <li>
-            <img class="language"
+            <img
+              :src="`${imgBaseUrl}w342${singleFilm.poster_path}`"
+              alt="poster"
+            />
+          </li>
+          <li>Titolo:{{ singleFilm.title }}</li>
+          <li>Titolo originale:{{ singleFilm.original_title }}</li>
+          <li>Lingua:
+            <img
+              class="language"
               v-if="supportedLanguages.includes(singleFilm.original_language)"
               :src="
                 require(`../assets/flags/${singleFilm.original_language}.png`)
               "
               alt="language flag"
             />
-            <img class="language" v-else :src="require(`../assets/flags/rsw.png`)" alt="rest-of-the-world">
+            <img
+              class="language"
+              v-else
+              :src="require(`../assets/flags/rsw.png`)"
+              alt="rest-of-the-world"
+            />
           </li>
-          <li>{{ Math.round(singleFilm.vote_average/2) }}</li>
+          <li>Voto:
+            <i
+              class="fa-solid fa-star"
+              v-for="(star, index) in Math.round(singleFilm.vote_average / 2)"
+              :key="index"
+            ></i>
+          </li>
         </ul>
       </div>
     </div>
@@ -42,7 +59,7 @@ export default {
         "us",
         "zh",
       ],
-    imgBaseUrl: 'https://image.tmdb.org/t/p/',
+      imgBaseUrl: "https://image.tmdb.org/t/p/",
     };
   },
 
@@ -51,8 +68,12 @@ export default {
 </script>
 
 <style lang="scss">
- .language {
+.language {
   width: 4.5rem;
   height: 2.8rem;
+}
+
+.fa-star{
+  color: goldenrod;
 }
 </style>

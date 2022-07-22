@@ -20,13 +20,20 @@
               "
               alt="language flag"
             />
-            <img class="language"
+            <img
+              class="language"
               v-else
               :src="require(`../assets/flags/rsw.png`)"
               alt="rest-of-the-world"
             />
           </li>
-          <li>{{ singleTvShow.vote_average }}</li>
+          <li>
+            Voto:
+            <i
+              class="fa-solid fa-star" v-for="(star, index) in
+              Math.round(singleTvShow.vote_average / 2)" :key="index">
+            </i>
+          </li>
         </ul>
       </div>
     </div>
@@ -64,5 +71,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>
