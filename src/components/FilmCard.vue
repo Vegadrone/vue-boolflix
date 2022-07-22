@@ -3,18 +3,18 @@
     <div class="row">
       <div class="col-4">
         <ul>
-          <li><img src="`https://image.tmdb.org/t/p/w342${sinsingleFilm.poster_path}`" alt=""></li>
+          <li><img :src="`https://image.tmdb.org/t/p/w342${singleFilm.poster_path}`" alt="poster"></li>
           <li>{{ singleFilm.title }}</li>
           <li>{{ singleFilm.original_title }}</li>
           <li>
-            <img
+            <img class="language"
               v-if="languages.includes(singleFilm.original_language)"
               :src="
                 require(`../assets/flags/${singleFilm.original_language}.png`)
               "
               alt="language flag"
             />
-            <img v-else :src="require(`../assets/flags/rsw.png`)" alt="rest-of-the-world">
+            <img class="language" v-else :src="require(`../assets/flags/rsw.png`)" alt="rest-of-the-world">
           </li>
           <li>{{ singleFilm.vote_average }}</li>
         </ul>
@@ -54,4 +54,8 @@ export default {
 </script>
 
 <style lang="scss">
+ .language {
+  width: 2.5rem;
+  height: 1.5rem;
+}
 </style>
