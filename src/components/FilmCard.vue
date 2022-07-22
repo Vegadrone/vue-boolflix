@@ -3,7 +3,7 @@
     <div class="row ">
         <div class="col-4">
             <ul>
-                <li>{{singleFilmOrShow.title}} - {{singleFilmOrShow.original_title}} - {{singleFilmOrShow.original_language}} - {{singleFilmOrShow.vote_average}}</li>
+                <li>{{singleFilm.title}} - {{singleFilm.original_title}} - {{singleFilm.original_language}} - {{singleFilm.vote_average}}</li>
             </ul>
         </div>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-    props:["singleFilmOrShow"]
+    props:["singleFilm"]
 }
 </script>
 

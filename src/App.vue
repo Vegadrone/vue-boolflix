@@ -23,6 +23,7 @@ export default {
       apiKey: "b1f55a1442ac1c7de011ebad1af53cf3",
       filmListFromApi: [],
       tvShowListFromApi: [],
+      languageList:[],
     };
   },
 
@@ -53,6 +54,8 @@ export default {
           console.warn(error);
         });
     },
+
+    
   },
 };
 </script>

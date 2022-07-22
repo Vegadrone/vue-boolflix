@@ -1,13 +1,13 @@
 <template>
   <main>
     <FilmCard
-      v-for="(singleFilm, index) in filmListFromApi"
-      :key="index"
+      v-for="singleFilm in filmListFromApi"
+      :key="singleFilm.id"
       :singleFilm="singleFilm"
     />
     <TvShowCard
-      v-for="(singleTvShow,index) in tvShowListFromApi" 
-      :key="index"
+      v-for="singleTvShow in tvShowListFromApi" 
+      :key="singleTvShow.id"
       :singleTvShow="singleTvShow"
      />
   </main>
