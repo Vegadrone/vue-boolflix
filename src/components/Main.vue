@@ -16,7 +16,10 @@ export default {
     FilmCard,
   },
 
-  props: ["filmListFromApi"],
+  props: [
+    "filmListFromApi", 
+    "tvShowListFromApi",
+  ],
 };
 </script>
 
