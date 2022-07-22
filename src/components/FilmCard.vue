@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-4">
         <ul>
-          <li><img src="" alt=""></li>
+          <li><img src="`https://image.tmdb.org/t/p/w342${sinsingleFilm.poster_path}`" alt=""></li>
           <li>{{ singleFilm.title }}</li>
           <li>{{ singleFilm.original_title }}</li>
           <li>
@@ -14,7 +14,7 @@
               "
               alt="language flag"
             />
-            <img v-else :src="require(`../assets/flags/rsw.png`)" alt="">
+            <img v-else :src="require(`../assets/flags/rsw.png`)" alt="rest-of-the-world">
           </li>
           <li>{{ singleFilm.vote_average }}</li>
         </ul>
@@ -42,6 +42,8 @@ export default {
         "us",
         "zh",
       ],
+    imgBaseUrl: 'https://image.tmdb.org/t/p/',
+    imgSize: 'w342'
 
 
     };
