@@ -32,21 +32,26 @@ export default {
 
   methods: {
     getResultsFromSearchInApi(needle) {
-      this.axiosCall()
-    },
-
-    axiosCall(url, array){
       axios
-        .get(url)
+        .get(`${this.apiMovieUrl}?api_key=${this.apiKey}&query=${needle}`)
         .then((result) => {
-          array = result.data.results;
-          console.warn(this.array)
+          this.filmListFromApi = result.data.results;
+          console.warn(this.filmListFromApi)
           })
         .catch((error) => {
           console.warn(error)
         })
 
-    }
+        axios
+        .get(`${this.apiTvShowsUrl}?api_key=${this.apiKey}&query=${needle}`)
+        .then((result) => {
+          this.tvShowListFromApi = result.data.results;
+          console.warn(this.tvShowListFromApi)
+          })
+        .catch((error) => {
+          console.warn(error)
+        })
+    },
   },
 };
 </script>
