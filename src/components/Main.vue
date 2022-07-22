@@ -32,4 +32,8 @@ img {
   width: 2.5rem;
   height: 1.5rem;
 }
+
+ul{
+  list-style: none;
+}
 </style>

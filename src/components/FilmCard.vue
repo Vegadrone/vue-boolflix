@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-4">
         <ul>
+          <li><img src="" alt=""></li>
           <li>{{ singleFilm.title }}</li>
           <li>{{ singleFilm.original_title }}</li>
           <li>
@@ -41,6 +42,8 @@ export default {
         "us",
         "zh",
       ],
+
+
     };
   },
 
