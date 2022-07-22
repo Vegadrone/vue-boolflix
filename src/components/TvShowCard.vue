@@ -5,7 +5,7 @@
         <ul>
           <li>
             <img
-              :src="`https://image.tmdb.org/t/p/w342${singleTvShow.poster_path}`"
+              :src="`${imgBaseUrl}w342${singleTvShow.poster_path}`"
               alt="poster"
             />
           </li>
@@ -54,7 +54,6 @@ export default {
       ],
 
       imgBaseUrl: "https://image.tmdb.org/t/p/",
-      imgSize: "w342",
     };
   },
 

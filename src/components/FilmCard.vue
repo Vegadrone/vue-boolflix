@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-4">
         <ul>
-          <li><img :src="`https://image.tmdb.org/t/p/w342${singleFilm.poster_path}`" alt="poster"></li>
+          <li><img :src="`${imgBaseUrl}w342${singleFilm.poster_path}`" alt="poster"></li>
           <li>{{ singleFilm.title }}</li>
           <li>{{ singleFilm.original_title }}</li>
           <li>
@@ -43,9 +43,6 @@ export default {
         "zh",
       ],
     imgBaseUrl: 'https://image.tmdb.org/t/p/',
-    imgSize: 'w342'
-
-
     };
   },
 
