@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss">
 img {
-  width: 2rem;
-  height: 1.3rem;
+  width: 2.5rem;
+  height: 1.5rem;
 }
 </style>
