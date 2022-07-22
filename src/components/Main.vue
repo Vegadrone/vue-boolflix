@@ -6,10 +6,10 @@
       :singleFilm="singleFilm"
     />
     <TvShowCard
-      v-for="singleTvShow in tvShowListFromApi" 
+      v-for="singleTvShow in tvShowListFromApi"
       :key="singleTvShow.id"
       :singleTvShow="singleTvShow"
-     />
+    />
   </main>
 </template>
 
@@ -23,12 +23,13 @@ export default {
     TvShowCard,
   },
 
-  props:[
-    'filmListFromApi', 
-    'tvShowListFromApi'
-  ]
+  props: ["filmListFromApi", "tvShowListFromApi"],
 };
 </script>
 
-<style>
+<style lang="scss">
+img {
+  width: 2rem;
+  height: 1.3rem;
+}
 </style>
