@@ -4,7 +4,6 @@
         <div class="col-4">
             <ul>
                 <li>{{singleFilmOrShow.title}} - {{singleFilmOrShow.original_title}} - {{singleFilmOrShow.original_language}} - {{singleFilmOrShow.vote_average}}</li>
-                 <li>{{singleFilmOrShow.name}} - {{singleFilmOrShowi.original_name}} - {{singleFilmOrShow.original_language}} - {{singleFilmOrShow.vote_average}}</li>
             </ul>
         </div>
     </div>

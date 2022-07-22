@@ -1,11 +1,15 @@
 <template>
   <main>
     <FilmCard
-      v-for="(singleFilmOrShow, index) in showsAndMovies"
+      v-for="(singleFilm, index) in filmListFromApi"
       :key="index"
-      :singleFilmOrShow="singleFilmOrShow"
+      :singleFilm="singleFilm"
     />
-    <TvShowCard/>
+    <TvShowCard
+      v-for="(singleTvShow,index) in tvShowListFromApi" 
+      :key="index"
+      :singleTvShow="singleTvShow"
+     />
   </main>
 </template>
 
@@ -19,26 +23,10 @@ export default {
     TvShowCard,
   },
 
-  data:function(){
-    return{
-      showsAndMovies:[],
-    }
-  },
-
-  props: {
-    propA:"filmListFromApi", 
-    propB:"tvShowListFromApi",
-  },
-
-  methods:{
-    mergeShowsandFilms(){
-      this.showsAndMovies = this.props.propA + this.props.propB;
-    }
-  },
-
-  created(){
-    mergeShowsandFilms();
-  }
+  props:[
+    'filmListFromApi', 
+    'tvShowListFromApi'
+  ]
 };
 </script>
 

@@ -2,7 +2,7 @@
   <div id="app">
     <Header @search="getResultsFromSearchInApi" />
     <Main
-      :filmListFromApii="filmListFromApi"
+      :filmListFromApi="filmListFromApi"
       :tvShowListFromApi="tvShowListFromApi"
     />
   </div>
