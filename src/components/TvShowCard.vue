@@ -14,7 +14,7 @@
           <li>
             <img
               class="language"
-              v-if="languages.includes(singleTvShow.original_language)"
+              v-if="supportedLanguages.includes(singleTvShow.original_language)"
               :src="
                 require(`../assets/flags/${singleTvShow.original_language}.png`)
               "
@@ -37,7 +37,7 @@
 export default {
   data: function () {
     return {
-      languages: [
+      supportedLanguages: [
         "de",
         "el",
         "en",

@@ -8,7 +8,7 @@
           <li>{{ singleFilm.original_title }}</li>
           <li>
             <img class="language"
-              v-if="languages.includes(singleFilm.original_language)"
+              v-if="supportedLanguages.includes(singleFilm.original_language)"
               :src="
                 require(`../assets/flags/${singleFilm.original_language}.png`)
               "
@@ -16,7 +16,7 @@
             />
             <img class="language" v-else :src="require(`../assets/flags/rsw.png`)" alt="rest-of-the-world">
           </li>
-          <li>{{ singleFilm.vote_average }}</li>
+          <li>{{ Math.round(singleFilm.vote_average/2) }}</li>
         </ul>
       </div>
     </div>
@@ -27,7 +27,7 @@
 export default {
   data: function () {
     return {
-      languages: [
+      supportedLanguages: [
         "de",
         "el",
         "en",
@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss">
  .language {
-  width: 2.5rem;
-  height: 1.5rem;
+  width: 4.5rem;
+  height: 2.8rem;
 }
 </style>
