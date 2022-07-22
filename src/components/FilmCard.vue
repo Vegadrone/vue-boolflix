@@ -3,8 +3,8 @@
     <div class="row ">
         <div class="col-4">
             <ul>
-                <li>{{singleFilmFromApi.title}} - {{singleFilmFromApi.original_title}} - {{singleFilmFromApi.original_language}} - {{singleFilmFromApi.vote_average}}</li>
-                 <li>{{singleFilmFromApi.name}} - {{singleFilmFromApi.original_name}} - {{singleFilmFromApi.original_language}} - {{singleFilmFromApi.vote_average}}</li>
+                <li>{{singleFilmOrShow.title}} - {{singleFilmOrShow.original_title}} - {{singleFilmOrShow.original_language}} - {{singleFilmOrShow.vote_average}}</li>
+                 <li>{{singleFilmOrShow.name}} - {{singleFilmOrShowi.original_name}} - {{singleFilmOrShow.original_language}} - {{singleFilmOrShow.vote_average}}</li>
             </ul>
         </div>
     </div>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    props:["singleFilmFromApi"]
+    props:["singleFilmOrShow"]
 }
 </script>
 
