@@ -1,11 +1,14 @@
 <template>
   <header>
     <div class="container">
-      <div class="row">
-        <div class="col-4 mt-4">
+      <div class="row d-flex justify-content-between">
+        <div class="col-3">
+          <h1 class="text-danger fw-bold text-upercase">Boolflix</h1>
+        </div>
+        <div class="col-3 mt-2">
           <form class="d-flex" role="search">
             <input
-              class="form-control me-2"
+              
               placeholder="Cerca Film o Serie TV"
               v-model="searchedMovie"
             />
@@ -33,5 +36,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+
+header{
+  background-color: #030303 ;
+}
+
 </style>

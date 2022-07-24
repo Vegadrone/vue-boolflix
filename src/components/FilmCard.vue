@@ -28,11 +28,13 @@
             />
           </li>
           <li>Voto:
+         
             <i
               class="fa-solid fa-star"
               v-for="(star, index) in Math.round(singleFilm.vote_average / 2)"
               :key="index"
             ></i>
+            
           </li>
         </ul>
       </div>
