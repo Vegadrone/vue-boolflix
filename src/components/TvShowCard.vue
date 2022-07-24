@@ -1,42 +1,45 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-4">
-        <ul>
-          <li>
-            <img
-              :src="`${imgBaseUrl}w342${singleTvShow.poster_path}`"
-              alt="poster"
-            />
-          </li>
-          <li>{{ singleTvShow.name }}</li>
-          <li>{{ singleTvShow.original_name }}</li>
-          <li>
-            <img
-              class="language"
-              v-if="supportedLanguages.includes(singleTvShow.original_language)"
-              :src="
-                require(`../assets/flags/${singleTvShow.original_language}.png`)
-              "
-              alt="language flag"
-            />
-            <img
-              class="language"
-              v-else
-              :src="require(`../assets/flags/rsw.png`)"
-              alt="rest-of-the-world"
-            />
-          </li>
-          <li>
-            Voto:
-            <i
-              class="fa-solid fa-star" v-for="(star, index) in
-              Math.round(singleTvShow.vote_average / 2)" :key="index">
-            </i>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <div>
+    <ul>
+      <li>
+        <img
+          :src="`${imgBaseUrl}w342${singleTvShow.poster_path}`"
+          alt="poster"
+        />
+      </li>
+      <li class="text-light fw-bold">
+        Titolo: <span class="fw-normal">{{ singleTvShow.name }}</span>
+      </li>
+      <li class="text-light fw-bold">
+        Titolo Originale:
+        <span class="fw-normal">{{ singleTvShow.original_name }}</span>
+      </li>
+      <li>
+        <img
+          class="language-icons"
+          v-if="supportedLanguages.includes(singleTvShow.original_language)"
+          :src="
+            require(`../assets/flags/${singleTvShow.original_language}.png`)
+          "
+          alt="language flag"
+        />
+        <img
+          class="language-icons"
+          v-else
+          :src="require(`../assets/flags/rsw.png`)"
+          alt="rest-of-the-world"
+        />
+      </li>
+      <li class="text-light fw-bold">
+        Voto:
+        <i
+          class="fa-solid fa-star"
+          v-for="(star, index) in Math.round(singleTvShow.vote_average / 2)"
+          :key="index"
+        >
+        </i>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -71,4 +74,11 @@ export default {
 </script>
 
 <style lang="scss">
+.language-icons {
+  width: 4.5rem;
+  height: 2.8rem;
+}
+.fa-star {
+  color: goldenrod;
+}
 </style>

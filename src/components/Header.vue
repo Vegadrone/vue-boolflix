@@ -1,22 +1,18 @@
 <template>
   <header>
-    <div class="container">
-      <div class="row d-flex justify-content-between">
-        <div class="col-3">
-          <h1 class="text-danger fw-bold text-upercase">Boolflix</h1>
-        </div>
-        <div class="col-3 mt-2">
-          <form class="d-flex" role="search">
-            <input
-              
-              placeholder="Cerca Film o Serie TV"
-              v-model="searchedMovie"
-            />
-            <button class="mx-2 fw-bold btn btn-danger" type="submit" @click.prevent="$emit('search',searchedMovie)">
-              Cerca
-            </button>
-          </form>
-        </div>
+    <div class="d-flex justify-content-between">
+      <h1 class="text-danger fw-bold text-uppercase mx-3 p-2">Boolflix</h1>
+      <div class="mx-3 mt-2 p-2">
+        <form class="d-flex" role="search">
+          <input placeholder="Cerca Film o Serie TV" v-model="searchedMovie" />
+          <button
+            class="mx-2 fw-bold btn btn-danger"
+            type="submit"
+            @click.prevent="$emit('search', searchedMovie)"
+          >
+            Cerca
+          </button>
+        </form>
       </div>
     </div>
   </header>
@@ -24,22 +20,18 @@
 
 <script>
 export default {
-  data: function(){
-    return{
-      searchedMovie:'',
-    }
+  data: function () {
+    return {
+      searchedMovie: "",
+    };
   },
 
-  methods:{
-    
-  }
+  methods: {},
 };
 </script>
 
 <style lang="scss">
-
-header{
-  background-color: #030303 ;
+header {
+  background-color: #030303;
 }
-
 </style>
