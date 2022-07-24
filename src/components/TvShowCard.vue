@@ -1,12 +1,6 @@
 <template>
-  <div>
+  <div class="card-wrapper" :style="{backgroundImage:`url(https://image.tmdb.org/t/p/w342${singleTvShow.poster_path})`}">
     <ul>
-      <li>
-        <img
-          :src="`${imgBaseUrl}w342${singleTvShow.poster_path}`"
-          alt="poster"
-        />
-      </li>
       <li class="text-light fw-bold">
         Titolo: <span class="fw-normal">{{ singleTvShow.name }}</span>
       </li>
@@ -14,7 +8,7 @@
         Titolo Originale:
         <span class="fw-normal">{{ singleTvShow.original_name }}</span>
       </li>
-      <li>
+      <li class="text-light fw-bold">Lingua:
         <img
           class="language-icons"
           v-if="supportedLanguages.includes(singleTvShow.original_language)"
@@ -39,6 +33,7 @@
         >
         </i>
       </li>
+       <li class="text-light fw-bold">Overview <span class="fw-normal">{{singleTvShow.overview}}</span></li>
     </ul>
   </div>
 </template>

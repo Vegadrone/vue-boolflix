@@ -1,9 +1,6 @@
 <template>
-  <div>
+  <div class="card-wrapper" :style="{backgroundImage:`url(https://image.tmdb.org/t/p/w342${singleFilm.poster_path})`}">
     <ul>
-      <li>
-        <img :src="`${imgBaseUrl}w342${singleFilm.poster_path}`" alt="poster" />
-      </li>
       <li class="text-light fw-bold">
         Titolo: <span class="fw-normal">{{ singleFilm.title }}</span>
       </li>
@@ -28,13 +25,13 @@
       </li>
       <li class="text-light fw-bold">
         Voto:
-
         <i
           class="fa-solid fa-star"
           v-for="(star, index) in Math.round(singleFilm.vote_average / 2)"
           :key="index"
         ></i>
       </li>
+      <li class="text-light fw-bold">Overview <span class="fw-normal">{{singleFilm.overview}}</span></li>
     </ul>
   </div>
 </template>
@@ -59,6 +56,8 @@ export default {
         "zh",
       ],
       imgBaseUrl: "https://image.tmdb.org/t/p/",
+
+
     };
   },
 
@@ -67,9 +66,6 @@ export default {
 </script>
 
 <style lang="scss">
-// .card{
-//   background-image: url(@`${imgBaseUrl}w342${singleFilm.poster_path}`);
-// }
 
 .language-icons {
   width: 4.5rem;
@@ -79,4 +75,11 @@ export default {
 .fa-star {
   color: goldenrod;
 }
+
+.card-wrapper{
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40rem;
+}
+
 </style>

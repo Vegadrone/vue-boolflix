@@ -46,6 +46,7 @@ main {
 
 .film-card,
 .tv-show-card {
-  width: calc((100% / 3) - 3rem);
+  width: calc((100% / 4) - 3rem);
+  padding: 2rem;
 }
 </style>
