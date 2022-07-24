@@ -1,6 +1,7 @@
 <template>
-  <div class="card-wrapper" :style="{backgroundImage:`url(https://image.tmdb.org/t/p/w342${singleTvShow.poster_path})`}">
-    <ul>
+  <div class="card-wrapper" :style="{backgroundImage:`url(https://image.tmdb.org/t/p/w342${singleTvShow.poster_path})`}"
+  @mouseover="isMouseover = true" @mouseleave="isMouseover = false">
+    <ul v-show="isMouseover === true">
       <li class="text-light fw-bold">
         Titolo: <span class="fw-normal">{{ singleTvShow.name }}</span>
       </li>
@@ -42,6 +43,7 @@
 export default {
   data: function () {
     return {
+      isMouseover:false,
       supportedLanguages: [
         "de",
         "el",

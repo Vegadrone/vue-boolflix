@@ -1,6 +1,11 @@
 <template>
-  <div class="card-wrapper" :style="{backgroundImage:`url(https://image.tmdb.org/t/p/w342${singleFilm.poster_path})`}">
-    <ul>
+  <div
+    class="card-wrapper"
+    :style="{
+      backgroundImage: `url(https://image.tmdb.org/t/p/w342${singleFilm.poster_path})`,
+    }" @mouseover="isMouseover = true" @mouseleave="isMouseover = false"
+  >
+    <ul v-show="isMouseover === true">
       <li class="text-light fw-bold">
         Titolo: <span class="fw-normal">{{ singleFilm.title }}</span>
       </li>
@@ -31,7 +36,9 @@
           :key="index"
         ></i>
       </li>
-      <li class="text-light fw-bold">Overview <span class="fw-normal">{{singleFilm.overview}}</span></li>
+      <li class="text-light fw-bold">
+        Overview <span class="fw-normal">{{ singleFilm.overview }}</span>
+      </li>
     </ul>
   </div>
 </template>
@@ -40,6 +47,7 @@
 export default {
   data: function () {
     return {
+      isMouseover:false,
       supportedLanguages: [
         "de",
         "el",
@@ -56,8 +64,6 @@ export default {
         "zh",
       ],
       imgBaseUrl: "https://image.tmdb.org/t/p/",
-
-
     };
   },
 
@@ -66,7 +72,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .language-icons {
   width: 4.5rem;
   height: 2.8rem;
@@ -76,10 +81,22 @@ export default {
   color: goldenrod;
 }
 
-.card-wrapper{
+.card-wrapper {
   background-repeat: no-repeat;
   background-size: cover;
   height: 40rem;
-}
+  position: relative;
+  border: 2px solid red;
+  cursor: pointer;
 
+  ul {
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #030303;
+    height: 100%;
+    width: 100%;
+  }
+}
 </style>
