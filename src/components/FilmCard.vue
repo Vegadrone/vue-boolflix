@@ -73,8 +73,8 @@ export default {
 
 <style lang="scss">
 .language-icons {
-  width: 4.5rem;
-  height: 2.8rem;
+  width: 3rem;
+  height: 2rem;
 }
 
 .fa-star {
@@ -84,12 +84,13 @@ export default {
 .card-wrapper {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40rem;
+  height: 52rem;
   position: relative;
   border: 2px solid red;
   cursor: pointer;
 
   ul {
+    font-size: 1.3rem;
     padding: 1.5rem;
     position: absolute;
     top: 0;

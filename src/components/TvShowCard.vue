@@ -72,8 +72,8 @@ export default {
 
 <style lang="scss">
 .language-icons {
-  width: 4.5rem;
-  height: 2.8rem;
+  width: 3rem;
+  height: 2rem;
 }
 .fa-star {
   color: goldenrod;

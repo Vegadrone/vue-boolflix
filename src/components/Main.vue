@@ -2,7 +2,7 @@
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 d-flex flex-wrap justify-content-between">
+        <div class="col-12 d-flex flex-wrap justify-content-between p-5">
           <FilmCard
             class="mt-4 film-card"
             v-for="singleFilm in filmListFromApi"
@@ -46,7 +46,7 @@ main {
 
 .film-card,
 .tv-show-card {
-  width: calc((100% / 4) - 3rem);
+  width: calc((100% / 3) - 3rem);
   padding: 2rem;
 }
 </style>
