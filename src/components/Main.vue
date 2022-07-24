@@ -1,15 +1,23 @@
 <template>
   <main>
-    <FilmCard
-      v-for="singleFilm in filmListFromApi"
-      :key="singleFilm.id"
-      :singleFilm="singleFilm"
-    />
-    <TvShowCard
-      v-for="singleTvShow in tvShowListFromApi"
-      :key="singleTvShow.id"
-      :singleTvShow="singleTvShow"
-    />
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <FilmCard
+            class="mt-4"
+            v-for="singleFilm in filmListFromApi"
+            :key="singleFilm.id"
+            :singleFilm="singleFilm"
+          />
+          <TvShowCard
+            class="mt-4"
+            v-for="singleTvShow in tvShowListFromApi"
+            :key="singleTvShow.id"
+            :singleTvShow="singleTvShow"
+          />
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -28,8 +36,11 @@ export default {
 </script>
 
 <style lang="scss">
+main {
+  background-color: #1b1b1b;
+}
 
-ul{
+ul {
   list-style: none;
 }
 </style>

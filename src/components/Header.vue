@@ -12,7 +12,7 @@
               placeholder="Cerca Film o Serie TV"
               v-model="searchedMovie"
             />
-            <button class="btn btn-outline-primary" type="submit" @click.prevent="$emit('search',searchedMovie)">
+            <button class="mx-2 fw-bold btn btn-danger" type="submit" @click.prevent="$emit('search',searchedMovie)">
               Cerca
             </button>
           </form>
