@@ -7,7 +7,9 @@
     @mouseover="isMouseover = true"
     @mouseleave="isMouseover = false"
   >
-  <h1 class="text-light fw-bold" v-if="singleFilm.poster_path === null">{{singleFilm.title}}</h1>
+    <h1 class="text-light fw-bold" v-if="singleFilm.poster_path === null">
+      {{ singleFilm.title }}
+    </h1>
     <ul v-show="isMouseover === true">
       <li class="text-light fw-bold">
         Titolo: <span class="fw-normal">{{ singleFilm.title }}</span>
@@ -101,6 +103,7 @@ export default {
     background-color: #030303;
     height: 100%;
     width: 100%;
+    overflow-y: auto;
   }
 }
 </style>

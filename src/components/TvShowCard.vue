@@ -1,7 +1,15 @@
 <template>
-  <div class="card-wrapper" :style="{backgroundImage:`url(https://image.tmdb.org/t/p/w342${singleTvShow.poster_path})`}"
-  @mouseover="isMouseover = true" @mouseleave="isMouseover = false">
-  <h1 class="text-light fw-bold" v-if="singleFilm.poster_path === null">{{singleTvShow.title}}</h1>
+  <div
+    class="card-wrapper"
+    :style="{
+      backgroundImage: `url(https://image.tmdb.org/t/p/w342${singleTvShow.poster_path})`,
+    }"
+    @mouseover="isMouseover = true"
+    @mouseleave="isMouseover = false"
+  >
+    <h1 class="text-light fw-bold" v-if="singleTvShow.poster_path === null">
+      {{ singleTvShow.title }}
+    </h1>
     <ul v-show="isMouseover === true">
       <li class="text-light fw-bold">
         Titolo: <span class="fw-normal">{{ singleTvShow.name }}</span>
@@ -10,7 +18,8 @@
         Titolo Originale:
         <span class="fw-normal">{{ singleTvShow.original_name }}</span>
       </li>
-      <li class="text-light fw-bold">Lingua:
+      <li class="text-light fw-bold">
+        Lingua:
         <img
           class="language-icons"
           v-if="supportedLanguages.includes(singleTvShow.original_language)"
@@ -35,7 +44,9 @@
         >
         </i>
       </li>
-       <li class="text-light fw-bold">Overview: <span class="fw-normal">{{singleTvShow.overview}}</span></li>
+      <li class="text-light fw-bold overview">
+        Overview: <span class="fw-normal">{{ singleTvShow.overview }}</span>
+      </li>
     </ul>
   </div>
 </template>
@@ -44,7 +55,7 @@
 export default {
   data: function () {
     return {
-      isMouseover:false,
+      isMouseover: false,
       supportedLanguages: [
         "de",
         "el",
