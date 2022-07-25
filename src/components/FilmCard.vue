@@ -89,7 +89,7 @@ export default {
 .card-wrapper {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40rem;
+  height: 55em; //can't understand why every time i open the project i need to modify this value or the cards goes bananas
   position: relative;
   border: 2px solid red;
   cursor: pointer;
