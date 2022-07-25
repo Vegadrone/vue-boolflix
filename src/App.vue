@@ -18,7 +18,8 @@ export default {
 
   data: function () {
     return {
-      apiUrl: "https://api.themoviedb.org/3/search/",
+      apiMovieUrl: "https://api.themoviedb.org/3/search/movie",
+      apiTvShowsUrl: "https://api.themoviedb.org/3/search/tv",
       apiKey: "b1f55a1442ac1c7de011ebad1af53cf3",
       filmListFromApi: [],
       tvShowListFromApi: [],
@@ -31,9 +32,9 @@ export default {
   },
 
   methods: {
-    getResultsFromSearchInApi(apiParams) {
+    getResultsFromSearchInApi(needle) {
       axios
-        .get(this.apiUrl +  'movie', apiParams)
+        .get(`${this.apiMovieUrl}?api_key=${this.apiKey}&query=${needle}`)
         .then((result) => {
           this.filmListFromApi = result.data.results;
           console.warn(this.filmListFromApi);
@@ -43,7 +44,7 @@ export default {
         });
 
       axios
-        .get(this.apiUrl +  'tv', apiParams)
+        .get(`${this.apiTvShowsUrl}?api_key=${this.apiKey}&query=${needle}`)
         .then((result) => {
           this.tvShowListFromApi = result.data.results;
           console.warn(this.tvShowListFromApi);
@@ -53,16 +54,6 @@ export default {
         });
     },
 
-    apiSearch: function(needle){
-      const apiParams = {
-        params:{
-          api_key: this.apiKey,
-          language:'it-IT',
-          query: needle,
-        }
-      }
-      this.getResultsFromSearchInApi(apiParams);
-    }
     
   },
 };
