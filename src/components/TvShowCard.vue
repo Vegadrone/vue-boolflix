@@ -8,7 +8,7 @@
     @mouseleave="isMouseover = false"
   >
     <h1 class="text-light fw-bold" v-if="singleTvShow.poster_path === null">
-      {{ singleTvShow.title }}
+      {{ singleTvShow.name }}
     </h1>
     <ul v-show="isMouseover === true">
       <li class="text-light fw-bold">

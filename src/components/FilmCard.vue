@@ -95,7 +95,7 @@ export default {
   cursor: pointer;
 
   ul {
-    font-size: 1.12rem;
+    font-size: 1.5rem;
     padding: 1.5rem;
     position: absolute;
     top: 0;
