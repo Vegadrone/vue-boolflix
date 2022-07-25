@@ -3,8 +3,11 @@
     class="card-wrapper"
     :style="{
       backgroundImage: `url(https://image.tmdb.org/t/p/w342${singleFilm.poster_path})`,
-    }" @mouseover="isMouseover = true" @mouseleave="isMouseover = false"
+    }"
+    @mouseover="isMouseover = true"
+    @mouseleave="isMouseover = false"
   >
+  <h1 class="text-light fw-bold" v-if="singleFilm.poster_path === null">{{singleFilm.title}}</h1>
     <ul v-show="isMouseover === true">
       <li class="text-light fw-bold">
         Titolo: <span class="fw-normal">{{ singleFilm.title }}</span>
@@ -37,7 +40,7 @@
         ></i>
       </li>
       <li class="text-light fw-bold">
-        Overview <span class="fw-normal">{{ singleFilm.overview }}</span>
+        Overview: <span class="fw-normal">{{ singleFilm.overview }}</span>
       </li>
     </ul>
   </div>
@@ -47,7 +50,7 @@
 export default {
   data: function () {
     return {
-      isMouseover:false,
+      isMouseover: false,
       supportedLanguages: [
         "de",
         "el",
@@ -73,8 +76,8 @@ export default {
 
 <style lang="scss">
 .language-icons {
-  width: 3rem;
-  height: 2rem;
+  width: 2.3rem;
+  height: 1.5rem;
 }
 
 .fa-star {
@@ -84,13 +87,13 @@ export default {
 .card-wrapper {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 52rem;
+  height: 40rem;
   position: relative;
   border: 2px solid red;
   cursor: pointer;
 
   ul {
-    font-size: 1.3rem;
+    font-size: 1.12rem;
     padding: 1.5rem;
     position: absolute;
     top: 0;
